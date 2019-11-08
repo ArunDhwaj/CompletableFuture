@@ -6,8 +6,9 @@ public class Driver
     public static void main(String[] args) throws ExecutionException, InterruptedException
     {
         System.out.println("CompletableFuture brief tutorial");
-        completedFuture1();
-        completedFuture2();
+        //completedFuture1();
+        //completedFuture2();
+        completedFuture3();
     }
 
     private static void completedFuture1() throws ExecutionException, InterruptedException
@@ -39,4 +40,22 @@ public class Driver
 
         System.out.println("Value- " + cf.get());
     }
+
+    private static void completedFuture3() throws ExecutionException, InterruptedException
+    {
+        //3: runAsync() is fine for running asynchronous computations but it doesn't return value.
+        // If you want to return a new CompletableFuture with a value then you can use supplyAsync(Supplier<U> supplier) method.
+        // Here U is the type of value obtained by calling the given Supplier.
+
+        String str = "3.1: runAsync() is fine for running asynchronous computations but it doesn't return value. If you want to return a new CompletableFuture with a value then you can use supplyAsync(Supplier<U> supplier) method. Here U is the type of value obtained by calling the given Supplier.";
+
+        CompletableFuture cf = CompletableFuture.supplyAsync(()->
+        {
+            System.out.println(str);
+            return str;
+        });
+
+        System.out.println("3.2:: " + cf.get());
+    }
+
 }
