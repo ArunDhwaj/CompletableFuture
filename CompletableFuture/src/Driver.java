@@ -1,4 +1,3 @@
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 public class Driver
@@ -7,10 +6,14 @@ public class Driver
     {
         System.out.println("CompletableFuture brief tutorial");
 
-        MyCompletableFuture myCompletableFuture = new MyCompletableFuture();
+        MyCompletableFutureBasic myCompletableFutureBasic = new MyCompletableFutureBasic();
 
-        //myCompletableFuture.completedFuture1();
-        //myCompletableFuture.completedFuture2();
-        myCompletableFuture.completedFuture3();
+        //myCompletableFutureBasic.ReturningAlreadyCompletedValue();
+        //myCompletableFutureBasic.ReturningVoidByRunAsync();
+        //myCompletableFutureBasic.ReturningValueBySupplyAsync();
+        //myCompletableFutureBasic.ChainingSupplyAsyncAndThenApply();
+        //myCompletableFutureBasic.ChainingSupplyAsyncAndThenApplyByExecutor();
+
+        myCompletableFutureBasic.ChainingSupplyAsyncAndThenAccept();
     }
 }
